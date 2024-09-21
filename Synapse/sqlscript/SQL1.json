@@ -1,0 +1,17 @@
+{
+	"name": "SQL1",
+	"properties": {
+		"content": {
+			"query": "select * from factSales;\nselect * from dimCustomer;\nselect * from dimProduct;\n\nselect count(*) from factSales; -- 542\nselect count(*) from dimCustomer; --440\nselect count(*) from dimProduct; --245\n\nselect max(CustomerSK) from dimcustomer;\nselect count(*) from dimcustomer; \nselect * from dimcustomer order by CustomerSK;\n\nselect count(*) from dimcustomer WHERE customerid>20000--440\n\nselect * from factsales\n\nselect * from dimCustomer;\n\nSELECT MAX(CustomerSK) AS 'MaxCustomerSK'  FROM dbo.dimCustomer;\n\nselect max(CustomerSK) from dimCustomer;--407 \n\nSELECT MAX(CustomerSK) AS 'MaxCustomerSK'  FROM dbo.dimCustomer;\n\nselect * from dimCustomer order by CustomerSK;\n\ncreate MASTER key ENCRYPTION by password ='P@ssword@123';\n\nselect * from poolactivitylog;\n\ndelete from poolactivitylog;\n\nselect * from customercourse\n\n\nselect * from customercourse;\n\nselect * from PoolActivityLog;\n\nDELETE from PoolActivityLog;\n\n\ncreate PROCEDURE GetCompanyName\n      @pCustomerID int \nAS\n      select DISTINCT(CompanyName)\n      from dimCustomer\n      WHERE CustomerID= @pCustomerID\n\nexec proce\n\nselect * from dimCustomer where CustomerID=277\n\n)\n\n\n\n\n\n\n\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "datapool",
+				"poolName": "datapool"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

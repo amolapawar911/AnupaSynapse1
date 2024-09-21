@@ -1,0 +1,17 @@
+{
+	"name": "DestinationDataset_pzw",
+	"properties": {
+		"annotations": [],
+		"type": "SqlPoolTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "dimCustomer"
+		},
+		"sqlPool": {
+			"referenceName": "datapool",
+			"type": "SqlPoolReference"
+		}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

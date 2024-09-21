@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 1",
+	"properties": {
+		"content": {
+			"query": "const { AzureNamedKeyCredential, TableClient } = require(\"@azure/data-tables\")\nconst account = \"<storage account name>\";\nconst accountKey = \"<account key>\"\nconst tableName = \"<table name>\";\nconst sharedKeyCredential = new AzureNamedKeyCredential(account, accountKey);\n\nconst client = new TableClient(\n  `https://${datalake310824}.dimCustomer.core.windows.net`,\n  `${dimCustomer}`,\n  sharedKeyCredential\n);\n\nconst entity = {partitionKey: \"p1\", rowKey: \"r1\", bar: \"updatedBar\"};\n\n// Update uses update mode \"Merge\" as default\n// merge means that update will match a stored entity\n// that has the same partitionKey and rowKey as the entity\n// passed to the method and then will only update the properties present in it.\n// Any other properties that are not defined in the entity passed to updateEntity\n// will remain as they are in the service\nawait client.updateEntity(entity)\n\n// We can also set the update mode to Replace, which will match the entity passed\n// to updateEntity with one stored in the service and replace with the new one.\n// If there are any missing properties in the entity passed to updateEntity, they\n// will be removed from the entity stored in the service\nawait client.updateEntity(entity, \"Replace\")",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "datapool",
+				"poolName": "datapool"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

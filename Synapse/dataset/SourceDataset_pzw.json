@@ -1,0 +1,13 @@
+{
+	"name": "SourceDataset_pzw",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "appdb",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}
